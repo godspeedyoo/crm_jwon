@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   get 'login' => 'user_sessions#new', :as => :login
 
-  resource :user_session
-  resources :users
+  resources :users, only: [:new, :create]
+  resources :user_sessions, only: [:new, :create, :destroy]
 end
