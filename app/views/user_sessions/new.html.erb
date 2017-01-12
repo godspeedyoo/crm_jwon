@@ -1,0 +1,10 @@
+<h1>New Login</h1>
+<div class="">
+  <%= form_for @user_session, :url => user_session_path do |f| %>
+    <label for="">username</label>
+    <%= f.text_field :username, class: "form-control" %>
+    <label for="">password</label>
+    <%= f.password_field :password, class: "form-control" %>
+    <button type="submit" name="button">Submit</button>
+  <% end %>
+</div>
