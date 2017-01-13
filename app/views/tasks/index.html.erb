@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <%= render 'tasks/toolbar' %>
+
+  <h1>Tasks</h1>
+  <ul class="list-group">
+    <% @tasks.each do |task| %>
+    <li class="list-group-item"><%= task.name %></li>
+    <% end %>
+  </ul>
+
+</div>
