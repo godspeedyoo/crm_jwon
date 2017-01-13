@@ -7,8 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Successfully created account!"
+      redirect_to root_url
     else
-      flash[:warning] = "Account creation failed."
+      flash[:warning] = "Account creation failed: #{@user.errors.full_messages}"
+      redirect_to new_user_path
     end
   end
 

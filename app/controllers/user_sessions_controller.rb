@@ -1,11 +1,9 @@
 class UserSessionsController < ApplicationController
   def new
-    puts "UserSessionsController#new"
     @user_session = UserSession.new
   end
 
   def create
-    puts "#UserSessionsController#create"
     @user_session = UserSession.new(user_session_params)
     if @user_session.save
       flash[:notice] = "Welcome"
