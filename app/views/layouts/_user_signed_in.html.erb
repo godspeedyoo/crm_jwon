@@ -1,0 +1,8 @@
+<ul class="nav navbar-nav navbar-right">
+  <li><a href="#">Signed in as <%= current_user.username %></a></li>
+  <li>
+    <%= link_to logout_path, method: :delete do %>
+      <span class="glyphicon glyphicon-log-out"></span> Logout
+    <% end %>
+  </li>
+</ul>
