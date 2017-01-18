@@ -19,6 +19,10 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    task
+  end
+
   def update
     if task.update(task_params)
       flash[:notice] = 'Successfully updated a task.'
@@ -31,12 +35,14 @@ class TasksController < ApplicationController
 
   def destroy
     task.destroy
+
+    redirect_to tasks_path
   end
 
   private
 
   def task
-    @task ||= Task.find(params[:task_id])
+    @task ||= Task.find(params[:id])
   end
 
   def task_params

@@ -4,7 +4,22 @@
   <h1>Tasks</h1>
   <ul class="list-group">
     <% @tasks.each do |task| %>
-    <li class="list-group-item"><%= task.name %></li>
+    <li class="task-row list-group-item">
+      <div class="checkbox">
+          <label>
+            <input type="checkbox" name="complete-task" value="">
+            <%= task.name %>
+          </label>
+          <div class="task">
+            <%= button_to edit_task_path(task), method: :get, class: "btn btn-default btn-xs task-edit" do %>
+              <span class="glyphicon glyphicon-edit"></span>
+            <% end %>
+            <%= button_to task, method: :delete, remote: true, class: "btn btn-default btn-xs task-edit" do %>
+              <span class="glyphicon glyphicon-trash"></span>
+            <% end %>
+          </div>
+      </div>
+    </li>
     <% end %>
   </ul>
 
